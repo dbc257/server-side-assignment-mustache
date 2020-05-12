@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+    <h2>View All Trips</h2>
+    <a href="http://localhost:2000/add-trip"><button>Add Another Trip</button></a>
+    <ul>
+         {{#listOfTrips}} <!-- Start of the loop --> 
+        
+        <li> 
+            <p> <b>Trip: </b>{{title}}      <b>Departure Date: </b>{{departureDate}}      <b>Return Date: </b>{{returnDate}}
+            <form method="POST" action="/delete"> 
+            <input type="hidden" name="deleteTrip" value="{{title}}" /> 
+            <button>Delete</button> </p> 
+            <img src="{{image}}" />
+            </form>
+        </li>
+          
+         {{/listOfTrips}} <!-- End of the loop -->
+    </ul>
+</body>
+</html>
